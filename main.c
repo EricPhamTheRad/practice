@@ -7,9 +7,17 @@ void addnum(int num1, int num2, int* sum){
 }
 
 int main(void) {
-  int sum;
+  FILE* inFile = NULL;
   int num1;
   int num2;
+  int sum;
+
+   inFile = fopen("hello.txt", "r");
+   if (inFile == NULL) {
+      printf("Could not open file myfile.txt.\n");
+      return -1; // -1 indicates error
+   }
+
   scanf("%d %d", &num1, &num2);
   addnum(num1, num2, &sum);
   printf("%d", sum);
