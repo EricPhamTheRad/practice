@@ -12,13 +12,17 @@ int main(void) {
   fgets(input, 101, stdin);
 
   fscanf(stdin, "%s", filename);
-
-  inFile = fopen(strcat(filename, ".txt"), "w");
-   if (inFile == NULL) {
-      printf("Could not open file myfile.txt.\n");
+  strcat(filename, ".txt");
+  
+  inFile = fopen(filename, "w");
+  
+   if (inFile != NULL) {
+      printf("Could not create file\n");
    }
 
   fputs(input, inFile);  
+
+  
   fclose(inFile);
 
 
