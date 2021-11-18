@@ -11,15 +11,21 @@ int main(void) {
   int num1;
   int num2;
   int sum;
+  char name[4][25];
 
    inFile = fopen("hello.txt", "r");
    if (inFile == NULL) {
       printf("Could not open file myfile.txt.\n");
       return -1; // -1 indicates error
    }
+  for(int i = 0; i < 4; i++){
+    fscanf(inFile, "%s", name[i]);
+  }
 
-  scanf("%d %d", &num1, &num2);
-  addnum(num1, num2, &sum);
-  printf("%d", sum);
+  //scanf("%d %d", &num1, &num2);
+  //addnum(num1, num2, &sum);
+  for(int i = 0; i < 4; i++){
+    printf("%s ", name[i]);
+  }
 return 0;
 }
