@@ -16,11 +16,12 @@ int main(void) {
 
   fscanf(stdin, "%s", filename);
 
-  inFile = fopen(strcat(filename, ".txt"), "r");
+  inFile = fopen(strcat(filename, ".txt"), "w");
    if (inFile == NULL) {
       printf("Could not open file myfile.txt.\n");
       return -1; // -1 indicates error
    }
+  /*
   for(int i = 0; i < 4; i++){
     fscanf(inFile, "%s", name[i]);
   }
@@ -30,5 +31,6 @@ int main(void) {
   for(int i = 0; i < 4; i++){
     printf("%s ", name[i]);
   }
+  */
 return 0;
 }
