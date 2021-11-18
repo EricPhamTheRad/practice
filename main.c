@@ -21,8 +21,8 @@ int main(void) {
   fputs(input, inFile);  
   fclose(inFile);
 
-  printf("%s", filename);
-  inFile = fopen(strcat(filename, ".txt"), "r");
+
+  inFile = fopen(filename, "r");
    if (inFile == NULL) {
       printf("Could not open file myfile.txt.\n");
    }
