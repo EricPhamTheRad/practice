@@ -27,7 +27,7 @@ int main(void) {
       printf("Could not open file myfile.txt.\n");
    }
 
-  fscanf(inFile, "%s", output);
+  fgets(output, 100, inFile);
   fprintf(stdout, "%s", output);  
   fclose(inFile);
   
