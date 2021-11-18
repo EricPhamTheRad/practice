@@ -12,8 +12,11 @@ int main(void) {
   int num2;
   int sum;
   char name[4][25];
+  char filename[100];
 
-   inFile = fopen("hello.txt", "r");
+  fscanf(stdin, "%s", filename);
+
+  inFile = fopen(strcat(filename, ".txt"), "r");
    if (inFile == NULL) {
       printf("Could not open file myfile.txt.\n");
       return -1; // -1 indicates error
