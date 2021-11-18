@@ -2,16 +2,39 @@
 #include <string.h>
 #include <ctype.h>
 
-void addnum(int num1, int num2, int* sum){
-  *sum = num1 + num2;
-}
-
 int main(void) {
-  int sum;
-  int num1;
-  int num2;
-  scanf("%d %d", &num1, &num2);
-  addnum(num1, num2, &sum);
-  printf("%d", sum);
-return 0;
+  FILE* inFile = NULL;
+  
+  char input[100];
+  char filename[100];
+  char output[100];
+
+  fgets(input, 101, stdin);
+
+  fscanf(stdin, "%s", filename);
+  strcat(filename, ".txt");
+  
+  inFile = fopen(filename, "w");
+  
+   if (inFile != NULL) {
+      printf("Could not create file\n");
+   }
+
+  fputs(input, inFile);  
+
+  
+  fclose(inFile);
+
+
+  inFile = fopen(filename, "r");
+   if (inFile == NULL) {
+      printf("Could not open file myfile.txt.\n");
+   }
+
+  fgets(output, 100, inFile);
+  fprintf(stdout, "%s", output);  
+  fclose(inFile);
+  
+  
+  return 0;
 }
